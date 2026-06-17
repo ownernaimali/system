@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Finance Tracker</h1>
+
+        <div class="dashboard">
+            <div class="card total">
+                <h3>Global Balance</h3>
+                <p id="global-balance">0.00</p>
+                <p>Add: <span id="global-add">0</span> | Cost: <span id="global-cost">0</span></p>
+                  
+            </div>
+            <div class="category-grid">           
+                <div class="card bw">
+                    <h4>Business (BW)</h4>
+                    <p>Add: <span id="bw-add">0</span> | Cost: <span id="bw-cost">0</span></p>
+                    <strong>Have: <span id="bw-have">0</span></strong>
+                </div>
+                <div class="card ow">
+                    <h4>Other (OW)</h4>
+                    <p>Add: <span id="ow-add">0</span> | Cost: <span id="ow-cost">0</span></p>
+                    <strong>Have: <span id="ow-have">0</span></strong>
+                </div>
+                    <div class="card mw">
+                    <h4>Personal (MW)</h4>
+                    <p>Add: <span id="mw-add">0</span> | Cost: <span id="mw-cost">0</span></p>
+                    <strong>Have: <span id="mw-have">0</span></strong>
+                </div>
+            </div>
+        </div>
+
+        <form id="account-form">
+            <input type="text" id="description" placeholder="Description" required>
+            <input type="number" id="amount" placeholder="Amount" required>
+            <input type="date" id="date" required>
+            
+            <select id="type">
+                <option value="add">Add (Income)</option>
+                <option value="cost">Cost (Expense)</option>
+            </select>
+
+            <select id="category">
+                <option value="mw">Personal (MW)</option>
+                <option value="bw">Business (BW)</option>
+                <option value="ow">Other (OW)</option>
+            </select>
+            
+            <button type="submit">Save Transaction</button>
+        </form>
+
+        <div class="history">
+            <h3>Transaction History</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Cat</th>
+                        <th>Type</th>
+                        <th>Amount</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="history-body"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
